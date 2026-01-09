@@ -5,51 +5,493 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TechSolutions | Dashboard</title>
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="icon" type="image/svg+xml" href="svg/favicon.svg" />
   </head>
-  <body>
-    <header>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div class="container-fluid flex-column flex-lg-row">
-          <a class="navbar-brand mb-2 mb-lg-0 p-3 fs-3" href="/"
-            ><i class="bi bi-cpu"></i> TechSolutions</a
-          >
+  <body class="bg-light">
+    <input type="checkbox" id="sidebar-toggle" class="d-none" />
 
-          <ul
-            class="navbar-nav d-flex flex-column flex-lg-row w-100 justify-content-lg-end align-items-center"
+    <header
+      class="navbar navbar-dark sticky-top bg-primary flex-md-nowrap p-0 shadow"
+    >
+      <a class="navbar-brand ms-4 mt-1 mb-2 mb-lg-0 p-2 fs-3" href="/">
+        <i class="bi bi-cpu"></i> TechSolutions
+      </a>
+
+      <label
+        class="navbar-toggler position-absolute d-md-none collapsed"
+        for="sidebar-toggle"
+        style="top: 0.75rem; right: 1rem; cursor: pointer"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </label>
+
+      <ul
+        class="navbar-nav flex-row d-none d-md-flex w-100 justify-content-end"
+      >
+        <li class="nav-item">
+          <a class="nav-link text-white px-3 me-2 ms-2" href="/"
+            ><i class="bi bi-house"></i> Início</a
           >
-            <li class="nav-item">
-              <a class="nav-link text-white me-2 ms-2" href="/"
-                ><i class="bi bi-house"></i> Início</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link active text-white me-2 ms-2"
-                href="dashboard.html"
-                ><i class="bi bi-bar-chart"></i> Dashboard</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white me-2 ms-2" href="forms.html"
-                ><i class="bi bi-envelope"></i> Contato</a
-              >
-            </li>
-          </ul>
-        </div>
-      </nav>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link text-white px-3 me-2 ms-2 active fw-bold"
+            href="dashboard.html"
+            ><i class="bi bi-bar-chart"></i> Dashboard</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white px-3 me-2 ms-2" href="forms.html"
+            ><i class="bi bi-envelope"></i> Contato</a
+          >
+        </li>
+      </ul>
     </header>
-    <footer class="bg-dark text-white text-center py-3 mt-5">
+
+    <div class="container-fluid">
+      <div class="row">
+        <nav
+          class="col-md-3 col-lg-2 d-none d-md-block bg-dark text-white sidebar sidebar-col pb-3"
+        >
+          <div class="position-sticky pt-3">
+            <div class="text-center mb-4">
+              <div
+                class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-2"
+                style="width: 50px; height: 50px"
+              >
+                <span class="fs-4">CS</span>
+              </div>
+              <h6 class="mb-0">Carlos Silva</h6>
+              <small class="text-muted">Admin Fullstack</small>
+            </div>
+
+            <div class="d-md-none">
+              <h6
+                class="sidebar-heading px-3 mt-4 mb-1 text-muted text-uppercase"
+              >
+                Navegação
+              </h6>
+              <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="/">
+                    <i class="bi bi-house me-2"></i> Início
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="forms.html">
+                    <i class="bi bi-envelope me-2"></i> Contato
+                  </a>
+                </li>
+              </ul>
+              <hr class="text-white-50" />
+            </div>
+
+            <h6
+              class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted text-uppercase"
+            >
+              <span>Gestão</span>
+            </h6>
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a
+                  class="nav-link active text-white bg-primary rounded mx-2"
+                  href="#"
+                >
+                  <i class="bi bi-speedometer2 me-2"></i> Visão Geral
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white-50 hover-white" href="#">
+                  <i class="bi bi-bag me-2"></i> Pedidos
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white-50 hover-white" href="#">
+                  <i class="bi bi-people me-2"></i> Clientes
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white-50 hover-white" href="#">
+                  <i class="bi bi-bar-chart me-2"></i> Relatórios
+                </a>
+              </li>
+            </ul>
+
+            <h6
+              class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted text-uppercase"
+            >
+              <span>Sistema</span>
+            </h6>
+            <ul class="nav flex-column mb-2">
+              <li class="nav-item">
+                <a class="nav-link text-white-50" href="#">
+                  <i class="bi bi-gear me-2"></i> Configurações
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 py-4">
+          <div
+            class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
+          >
+            <h1 class="h2 text-dark">Visão Geral</h1>
+            <div class="btn-toolbar mb-2 mb-md-0">
+              <div class="btn-group me-2 d-none d-sm-flex">
+                <button type="button" class="btn btn-sm btn-outline-secondary">
+                  Compartilhar
+                </button>
+                <button type="button" class="btn btn-sm btn-outline-secondary">
+                  Exportar
+                </button>
+              </div>
+
+              <button
+                type="button"
+                class="btn btn-sm btn-outline-secondary dropdown-toggle"
+              >
+                <i class="bi bi-calendar"></i> Esta Semana
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="alert alert-warning alert-dismissible fade show shadow-sm"
+            role="alert"
+          >
+            <strong
+              ><i class="bi bi-exclamation-triangle-fill"></i> Atenção:</strong
+            >
+            Manutenção programada no servidor de banco de dados para hoje às
+            23:00.
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="alert"
+              aria-label="Close"
+            ></button>
+          </div>
+
+          <div class="row g-3 mb-4">
+            <div class="col-12 col-sm-6 col-xl-3">
+              <div
+                class="card shadow-sm border-0 border-start border-primary border-4"
+              >
+                <div class="card-body">
+                  <div
+                    class="d-flex align-items-center justify-content-between"
+                  >
+                    <div>
+                      <h6 class="text-muted text-uppercase fw-bold mb-1">
+                        Receita Mensal
+                      </h6>
+                      <h3 class="mb-0 fw-bold">R$ 48.200</h3>
+                    </div>
+                    <div
+                      class="text-primary bg-primary bg-opacity-10 p-3 rounded"
+                    >
+                      <i class="bi bi-currency-dollar fs-3"></i>
+                    </div>
+                  </div>
+                  <div class="mt-2 mb-0 text-muted small">
+                    <span class="text-success fw-bold"
+                      ><i class="bi bi-arrow-up"></i> 12%</span
+                    >
+                    vs mês anterior
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-xl-3">
+              <div
+                class="card shadow-sm border-0 border-start border-success border-4"
+              >
+                <div class="card-body">
+                  <div
+                    class="d-flex align-items-center justify-content-between"
+                  >
+                    <div>
+                      <h6 class="text-muted text-uppercase fw-bold mb-1">
+                        Clientes Ativos
+                      </h6>
+                      <h3 class="mb-0 fw-bold">1,240</h3>
+                    </div>
+                    <div
+                      class="text-success bg-success bg-opacity-10 p-3 rounded"
+                    >
+                      <i class="bi bi-people fs-3"></i>
+                    </div>
+                  </div>
+                  <div class="mt-2 mb-0 text-muted small">
+                    <span class="text-success fw-bold"
+                      ><i class="bi bi-arrow-up"></i> 5%</span
+                    >
+                    novos esta semana
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-xl-3">
+              <div
+                class="card shadow-sm border-0 border-start border-warning border-4"
+              >
+                <div class="card-body">
+                  <div
+                    class="d-flex align-items-center justify-content-between"
+                  >
+                    <div>
+                      <h6 class="text-muted text-uppercase fw-bold mb-1">
+                        Tickets Abertos
+                      </h6>
+                      <h3 class="mb-0 fw-bold">28</h3>
+                    </div>
+                    <div
+                      class="text-warning bg-warning bg-opacity-10 p-3 rounded"
+                    >
+                      <i class="bi bi-ticket-perforated fs-3"></i>
+                    </div>
+                  </div>
+                  <div class="mt-2 mb-0 text-muted small">
+                    <span class="text-danger fw-bold"
+                      ><i class="bi bi-arrow-up"></i> 3</span
+                    >
+                    urgentes
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-xl-3">
+              <div
+                class="card shadow-sm border-0 border-start border-info border-4"
+              >
+                <div class="card-body">
+                  <div
+                    class="d-flex align-items-center justify-content-between"
+                  >
+                    <div>
+                      <h6 class="text-muted text-uppercase fw-bold mb-1">
+                        Status Servidor
+                      </h6>
+                      <h3 class="mb-0 fw-bold">98.5%</h3>
+                    </div>
+                    <div class="text-info bg-info bg-opacity-10 p-3 rounded">
+                      <i class="bi bi-hdd-network fs-3"></i>
+                    </div>
+                  </div>
+                  <div class="mt-2 mb-0 text-muted small">
+                    <span class="text-success fw-bold">Online</span> e estável
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row g-4">
+            <div class="col-lg-7">
+              <div class="card shadow-sm border-0 h-100">
+                <div class="card-header bg-white py-3">
+                  <h5 class="mb-0 fw-bold">Vendas por Categoria (Semana)</h5>
+                </div>
+                <div class="card-body">
+                  <div class="css-chart-container mb-3">
+                    <div
+                      class="d-flex flex-column align-items-center"
+                      style="width: 15%"
+                    >
+                      <div
+                        class="css-bar bg-primary"
+                        style="height: 60px"
+                        data-value="60%"
+                      ></div>
+                      <small class="mt-2 text-muted">Consult.</small>
+                    </div>
+                    <div
+                      class="d-flex flex-column align-items-center"
+                      style="width: 15%"
+                    >
+                      <div
+                        class="css-bar bg-success"
+                        style="height: 85px"
+                        data-value="85%"
+                      ></div>
+                      <small class="mt-2 text-muted">SaaS</small>
+                    </div>
+                    <div
+                      class="d-flex flex-column align-items-center"
+                      style="width: 15%"
+                    >
+                      <div
+                        class="css-bar bg-warning"
+                        style="height: 40px"
+                        data-value="40%"
+                      ></div>
+                      <small class="mt-2 text-muted">Plugins</small>
+                    </div>
+                    <div
+                      class="d-flex flex-column align-items-center"
+                      style="width: 15%"
+                    >
+                      <div
+                        class="css-bar bg-info"
+                        style="height: 70px"
+                        data-value="70%"
+                      ></div>
+                      <small class="mt-2 text-muted">API</small>
+                    </div>
+                    <div
+                      class="d-flex flex-column align-items-center"
+                      style="width: 15%"
+                    >
+                      <div
+                        class="css-bar bg-danger"
+                        style="height: 30px"
+                        data-value="30%"
+                      ></div>
+                      <small class="mt-2 text-muted">Suporte</small>
+                    </div>
+                  </div>
+                  <p class="text-muted small text-center">
+                    Dados atualizados em tempo real.
+                  </p>
+
+                  <h6 class="fw-bold mt-4 mb-3">Uso de Recursos</h6>
+                  <div class="mb-3">
+                    <div class="d-flex justify-content-between mb-1">
+                      <span class="small">CPU Server 01</span>
+                      <span class="small fw-bold">45%</span>
+                    </div>
+                    <div class="progress" style="height: 8px">
+                      <div
+                        class="progress-bar bg-success"
+                        role="progressbar"
+                        style="width: 45%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <div class="d-flex justify-content-between mb-1">
+                      <span class="small">Memória RAM</span>
+                      <span class="small fw-bold text-danger">88%</span>
+                    </div>
+                    <div class="progress" style="height: 8px">
+                      <div
+                        class="progress-bar bg-danger progress-bar-striped"
+                        role="progressbar"
+                        style="width: 88%"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-5">
+              <div class="card shadow-sm border-0 h-100">
+                <div
+                  class="card-header bg-white py-3 d-flex justify-content-between align-items-center"
+                >
+                  <h5 class="mb-0 fw-bold">Últimas Transações</h5>
+                  <a href="#" class="btn btn-sm btn-light">Ver tudo</a>
+                </div>
+                <div class="table-responsive">
+                  <table class="table table-hover align-middle mb-0">
+                    <thead class="table-light">
+                      <tr>
+                        <th>Cliente</th>
+                        <th>Data</th>
+                        <th class="text-end">Valor</th>
+                        <th class="text-center">Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <div class="d-flex align-items-center">
+                            <i class="bi bi-person-fill"></i>
+                            <span class="small fw-bold">Roberto A.</span>
+                          </div>
+                        </td>
+                        <td class="small text-muted">Hoje</td>
+                        <td class="text-end small fw-bold">R$ 450,00</td>
+                        <td class="text-center">
+                          <span
+                            class="badge bg-success-subtle text-success border border-success"
+                            >Pago</span
+                          >
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="d-flex align-items-center">
+                            <i class="bi bi-person-fill"></i>
+                            <span class="small fw-bold">Julia M.</span>
+                          </div>
+                        </td>
+                        <td class="small text-muted">Ontem</td>
+                        <td class="text-end small fw-bold">R$ 1.200,00</td>
+                        <td class="text-center">
+                          <span
+                            class="badge bg-warning-subtle text-warning border border-warning"
+                            >Pendente</span
+                          >
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="d-flex align-items-center">
+                            <i class="bi bi-person-fill"></i>
+                            <span class="small fw-bold">TechCorp</span>
+                          </div>
+                        </td>
+                        <td class="small text-muted">Jan 08</td>
+                        <td class="text-end small fw-bold">R$ 3.500,00</td>
+                        <td class="text-center">
+                          <span
+                            class="badge bg-success-subtle text-success border border-success"
+                            >Pago</span
+                          >
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="d-flex align-items-center">
+                            <i class="bi bi-person-fill"></i>
+                            <span class="small fw-bold">Loja 10</span>
+                          </div>
+                        </td>
+                        <td class="small text-muted">Jan 07</td>
+                        <td class="text-end small fw-bold">R$ 120,00</td>
+                        <td class="text-center">
+                          <span
+                            class="badge bg-danger-subtle text-danger border border-danger"
+                            >Falhou</span
+                          >
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <footer class="bg-dark text-white text-center py-3 mt-0">
       <div class="container">
         <small>&copy; 2025 TechSolutions. Todos os direitos reservados.</small>
       </div>
