@@ -19,6 +19,12 @@
   </head>
   <body>
     <header>
+      <!--
+      A Navbar do Bootstrap normalmente usa JavaScript para abrir e fechar o menu no mobile.
+      Como JS não é permitido nesta etapa, o menu não possui colapso dinâmico.
+      Os itens ficam sempre visíveis e apenas mudam de layout usando flexbox.
+      -->
+
       <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container-fluid flex-column flex-lg-row">
           <a class="navbar-brand mb-2 mb-lg-0 p-3 fs-3" href="/"
@@ -615,6 +621,12 @@
     </footer>
 
     <input type="checkbox" id="modal-sucesso" class="d-none" />
+
+    <!--
+    Os modais do Bootstrap dependem de JavaScript para controle de exibição.
+    Aqui, esse comportamento foi substituído por um checkbox invisível.
+    O CSS reage ao estado :checked para mostrar ou ocultar o modal.
+    -->
 
     <div class="modal-backdrop-css">
       <div
